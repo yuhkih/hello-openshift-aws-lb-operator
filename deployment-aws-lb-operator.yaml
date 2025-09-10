@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-openshift
+  namespace: hello-openshift
+spec:
+  selector:
+    matchLabels:
+      app: hello-openshift
+  replicas: 1
+  template:
+    metadata:
+       labels:
+         app: hello-openshift
+    spec:
+      containers:
+      - image: quay.io/openshift/origin-hello-openshift
+        imagePullPolicy: Always
+        name: origin-hello-openshift

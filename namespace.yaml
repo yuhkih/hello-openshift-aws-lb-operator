@@ -1,0 +1,10 @@
+apiVersion: project.openshift.io/v1
+kind: Project
+metadata:
+  name: hello-openshift
+  labels:
+    env: dev
+    owner: blackbelt
+  annotations:
+    openshift.io/display-name: "My Project"
+    openshift.io/description: "This is my new project."

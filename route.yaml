@@ -1,0 +1,37 @@
+apiVersion: v1
+items:
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    creationTimestamp: "2025-09-10T08:52:20Z"
+    name: hello-openshift-lt8wm
+    namespace: hello-openshift
+    ownerReferences:
+    - apiVersion: networking.k8s.io/v1
+      controller: true
+      kind: Ingress
+      name: hello-openshift
+      uid: 130a6822-8e6b-4440-937b-55204cb54f18
+    resourceVersion: "198529"
+    uid: 1509197a-b786-41da-a72e-361853c96cfb
+  spec:
+    host: hello-openshift.apps.rosa.public-cluster.pd80.p3.openshiftapps.com
+    path: /
+    to:
+      kind: Service
+      name: hello-openshift
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: "2025-09-10T08:52:20Z"
+        status: "True"
+        type: Admitted
+      host: hello-openshift.apps.rosa.public-cluster.pd80.p3.openshiftapps.com
+      routerCanonicalHostname: router-default.apps.rosa.public-cluster.pd80.p3.openshiftapps.com
+      routerName: default
+      wildcardPolicy: None
+kind: List
+metadata:
+  resourceVersion: ""
